@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = trialForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = '¡Solicitud enviada!';
-      submitBtn.style.backgroundColor = '#25D366';
+      submitBtn.style.backgroundColor = 'var(--primary)';
       submitBtn.style.color = '#000';
 
       setTimeout(() => {

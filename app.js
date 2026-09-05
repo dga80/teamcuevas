@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initial Splash Screen: lasts 500ms (half a second) then fades out
+  // Initial Splash Screen: lasts 1.5s then fades out smoothly
   const splashScreen = document.getElementById('splashScreen');
   if (splashScreen) {
     setTimeout(() => {
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (splashScreen.parentNode) {
           splashScreen.parentNode.removeChild(splashScreen);
         }
-      }, 500);
-    }, 500);
+      }, 700);
+    }, 1500);
   }
 
   // Mobile Navigation Drawer Toggle

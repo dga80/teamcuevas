@@ -48,22 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       
       // WhatsApp direct redirect
-      const whatsappUrl = `https://wa.me/34600000000?text=${whatsappText}`; // Replace or open
+      const whatsappUrl = `https://wa.me/34642094652?text=${whatsappText}`;
       
       // Show confirmation feedback
       const submitBtn = trialForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = '¡Solicitud enviada!';
+      submitBtn.textContent = '¡Abriendo WhatsApp...!';
       submitBtn.style.backgroundColor = 'var(--primary)';
       submitBtn.style.color = '#000';
 
+      // Open WhatsApp chat directly with the prefilled message
+      window.open(whatsappUrl, '_blank');
+
       setTimeout(() => {
-        alert(`¡Gracias ${name}! Tu solicitud para la clase gratis de ${discipline} ha sido registrada. También puedes contactar directamente al club por WhatsApp.`);
         trialForm.reset();
         submitBtn.textContent = originalText;
         submitBtn.style.backgroundColor = '';
         submitBtn.style.color = '';
-      }, 500);
+      }, 1000);
     });
   }
 

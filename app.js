@@ -63,4 +63,149 @@ document.addEventListener('DOMContentLoaded', () => {
       header.style.backgroundColor = 'rgba(19, 19, 22, 0.85)';
     }
   });
+
+  // Interactive Multimedia Gallery (Filters & Lightbox)
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryModal = document.getElementById('galleryModal');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const modalPrev = document.getElementById('modalPrev');
+  const modalNext = document.getElementById('modalNext');
+  const modalMediaViewport = document.getElementById('modalMediaViewport');
+  const modalBadge = document.getElementById('modalBadge');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalIgLink = document.getElementById('modalIgLink');
+
+  let currentVisibleIndex = 0;
+
+  function getVisibleItems() {
+    return Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+  }
+
+  // Filter functionality
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.getAttribute('data-filter');
+
+      galleryItems.forEach(item => {
+        const categories = item.getAttribute('data-category') || '';
+        if (filter === 'all' || categories.split(' ').includes(filter)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Lightbox Modal Functions
+  function openModal(index) {
+    const visible = getVisibleItems();
+    if (!visible.length) return;
+
+    currentVisibleIndex = (index + visible.length) % visible.length;
+    const item = visible[currentVisibleIndex];
+
+    const type = item.getAttribute('data-type');
+    const src = item.getAttribute('data-src');
+    const thumb = item.getAttribute('data-thumb');
+    const title = item.getAttribute('data-title') || '';
+    const caption = item.getAttribute('data-caption') || '';
+    const igUrl = item.getAttribute('data-ig') || 'https://www.instagram.com/team_cuevasbjj/';
+
+    // Reset container and pause any previous media
+    if (modalMediaViewport) {
+      modalMediaViewport.innerHTML = '';
+
+      if (type === 'video') {
+        modalBadge.textContent = 'Reel / Vídeo';
+        modalBadge.style.color = 'var(--primary)';
+        const video = document.createElement('video');
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.loop = true;
+        video.poster = thumb || '';
+        video.innerHTML = `<source src="${src}" type="video/mp4">Tu navegador no soporta reproducción de vídeo HTML5.`;
+        modalMediaViewport.appendChild(video);
+      } else {
+        modalBadge.textContent = 'Fotografía';
+        modalBadge.style.color = 'var(--text-secondary)';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = title;
+        modalMediaViewport.appendChild(img);
+      }
+    }
+
+    modalTitle.textContent = title;
+    modalCaption.textContent = caption;
+    modalIgLink.href = igUrl;
+
+    galleryModal.classList.add('active');
+    galleryModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!galleryModal) return;
+    galleryModal.classList.remove('active');
+    galleryModal.setAttribute('aria-hidden', 'true');
+    
+    // Stop any video playback
+    if (modalMediaViewport) {
+      const video = modalMediaViewport.querySelector('video');
+      if (video) {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+      }
+      modalMediaViewport.innerHTML = '';
+    }
+    document.body.style.overflow = '';
+  }
+
+  function navigateModal(direction) {
+    const visible = getVisibleItems();
+    if (!visible.length) return;
+    openModal(currentVisibleIndex + direction);
+  }
+
+  // Open modal on item click
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const visible = getVisibleItems();
+      const index = visible.indexOf(item);
+      if (index !== -1) {
+        openModal(index);
+      }
+    });
+  });
+
+  // Modal controls
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+  if (modalPrev) modalPrev.addEventListener('click', () => navigateModal(-1));
+  if (modalNext) modalNext.addEventListener('click', () => navigateModal(1));
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (!galleryModal || !galleryModal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      closeModal();
+    } else if (e.key === 'ArrowLeft') {
+      navigateModal(-1);
+    } else if (e.key === 'ArrowRight') {
+      navigateModal(1);
+    }
+  });
 });

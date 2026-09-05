@@ -311,45 +311,244 @@
           <span class="section-tag">Comunidad @team_cuevasbjj</span>
           <h2 class="section-title" style="border-left: none; padding-left: 0;">Vida en el Tatami</h2>
           <p class="section-desc" style="margin-left: auto; margin-right: auto;">
-            Más de 1.400 personas siguen nuestro día a día. Así vivimos los entrenamientos, graduaciones y competiciones en Team Cuevas.
+            Explora nuestros entrenamientos, competiciones, técnicas y el ambiente de la academia a través de nuestros vídeos y fotos oficiales de Instagram.
           </p>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item">
+        <!-- Filter Controls -->
+        <div class="gallery-filters" role="tablist" aria-label="Filtros de la galería">
+          <button class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="gallery-filter-btn" data-filter="video" role="tab" aria-selected="false">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Vídeos y Reels
+          </button>
+          <button class="gallery-filter-btn" data-filter="clases" role="tab" aria-selected="false">🥋 Clases y Tatami</button>
+          <button class="gallery-filter-btn" data-filter="competicion" role="tab" aria-selected="false">🏆 Competición</button>
+          <button class="gallery-filter-btn" data-filter="instalaciones" role="tab" aria-selected="false">📍 Academia y Mural</button>
+        </div>
+
+        <!-- Interactive Media Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- 1. Video: Competición Armbar -->
+          <div class="gallery-item" data-type="video" data-category="video competicion" 
+               data-src="videos/reel_competicion.mp4" 
+               data-thumb="images/reel_competicion.jpg"
+               data-title="Finalización en Competición (Llave de Brazo)" 
+               data-caption="Momento cumbre en competición oficial: finalización técnica impecable con llave de brazo (Armbar) en el tatami. ¡Orgullo de equipo!" 
+               data-ig="https://www.instagram.com/p/DDDWhfktRjx/">
+            <img src="images/reel_competicion.jpg" alt="Finalización en competición de BJJ" loading="lazy">
+            <span class="gallery-badge video-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Reel
+            </span>
+            <div class="gallery-play-overlay">
+              <div class="play-icon-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Competición</span>
+              <span class="gallery-item-text">Finalización con llave de brazo en combate</span>
+            </div>
+          </div>
+
+          <!-- 2. Foto: Clase de BJJ -->
+          <div class="gallery-item" data-type="image" data-category="clases" 
+               data-src="images/post_1.jpg" 
+               data-thumb="images/post_1.jpg"
+               data-title="Primera Clase Gratis de Jiu-Jitsu" 
+               data-caption="¿Llevas tiempo queriendo probar Jiu Jitsu? Este es el momento. Todos los niveles, ambiente familiar y técnica paso a paso desde el primer día." 
+               data-ig="https://www.instagram.com/p/DbKwT1JISga/">
             <img src="images/post_1.jpg" alt="Entrenamiento BJJ en Team Cuevas" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
             <div class="gallery-item-overlay">
-              <span class="gallery-item-text">🥋 ¿Llevas tiempo queriendo probar Jiu Jitsu? ¡Primera clase gratis!</span>
+              <span class="gallery-item-tag">Clases</span>
+              <span class="gallery-item-text">🥋 Prueba tu primera clase sin compromiso</span>
             </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- 3. Video: Familia Team Cuevas -->
+          <div class="gallery-item" data-type="video" data-category="video clases" 
+               data-src="videos/reel_familia.mp4" 
+               data-thumb="images/reel_familia.jpg"
+               data-title="La Familia de Team Cuevas BJJ" 
+               data-caption="Una gran sesión de entrenamiento con parte de la familia Team Cuevas en el tatami de Sant Adrià de Besòs. El compañerismo es nuestra mayor fuerza." 
+               data-ig="https://www.instagram.com/p/CsUd9UlLC19/">
+            <img src="images/reel_familia.jpg" alt="Familia Team Cuevas en el tatami" loading="lazy">
+            <span class="gallery-badge video-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Reel
+            </span>
+            <div class="gallery-play-overlay">
+              <div class="play-icon-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Comunidad</span>
+              <span class="gallery-item-text">Familia Team Cuevas unida en el tatami</span>
+            </div>
+          </div>
+
+          <!-- 4. Foto: Graduación Infantil -->
+          <div class="gallery-item" data-type="image" data-category="clases competicion" 
+               data-src="images/post_12.jpg" 
+               data-thumb="images/post_12.jpg"
+               data-title="Graduación de los Peques de la Academia" 
+               data-caption="Celebrando los nuevos grados y cinturones de nuestros alumnos infantiles. Compromiso, disciplina y sonrisas garantizadas." 
+               data-ig="https://www.instagram.com/p/DTbXyAPiED-/">
+            <img src="images/post_12.jpg" alt="Graduación de cinturones infantiles" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Kids</span>
+              <span class="gallery-item-text">Graduación y progreso de los peques</span>
+            </div>
+          </div>
+
+          <!-- 5. Video: Clases Matinales -->
+          <div class="gallery-item" data-type="video" data-category="video clases" 
+               data-src="videos/reel_clases.mp4" 
+               data-thumb="images/reel_clases.jpg"
+               data-title="Clases Matinales de Jiu-Jitsu" 
+               data-caption="Comenzando el día con la mejor energía: técnica de suelo, defensa y rondas de combate en los horarios de mañana (martes y jueves a las 10:00)." 
+               data-ig="https://www.instagram.com/reel/C8SGM7pNUG8/">
+            <img src="images/reel_clases.jpg" alt="Clases de Jiu-Jitsu por la mañana" loading="lazy">
+            <span class="gallery-badge video-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Reel
+            </span>
+            <div class="gallery-play-overlay">
+              <div class="play-icon-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Entreno</span>
+              <span class="gallery-item-text">Sesión matinal de BJJ y drills técnicos</span>
+            </div>
+          </div>
+
+          <!-- 6. Foto: Jiu-Jitsu Femenino -->
+          <div class="gallery-item" data-type="image" data-category="clases" 
+               data-src="images/post_9.jpg" 
+               data-thumb="images/post_9.jpg"
+               data-title="Jiu-Jitsu Femenino en Team Cuevas" 
+               data-caption="En Team Cuevas cada vez somos más mujeres practicando BJJ y defensa personal. Un espacio seguro, empoderador y muy técnico." 
+               data-ig="https://www.instagram.com/p/DVyLgtoCFIN/">
+            <img src="images/post_9.jpg" alt="Grupo femenino de Jiu-Jitsu" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Femenino</span>
+              <span class="gallery-item-text">Cada vez más mujeres en nuestro tatami</span>
+            </div>
+          </div>
+
+          <!-- 7. Video: Graffiti Trazo Urbano -->
+          <div class="gallery-item" data-type="video" data-category="video instalaciones" 
+               data-src="videos/reel_graffiti.mp4" 
+               data-thumb="images/reel_graffiti.jpg"
+               data-title="El Mural Artístico de Trazo Urbano" 
+               data-caption="Así cobró vida el espectacular graffiti y mural urbano que preside nuestro tatami principal, realizado por @trazo.urbano." 
+               data-ig="https://www.instagram.com/p/DXwx9CkoDiQ/">
+            <img src="images/reel_graffiti.jpg" alt="Proceso del mural de graffiti en la academia" loading="lazy">
+            <span class="gallery-badge video-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Reel
+            </span>
+            <div class="gallery-play-overlay">
+              <div class="play-icon-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Instalaciones</span>
+              <span class="gallery-item-text">Mural de graffiti por @trazo.urbano</span>
+            </div>
+          </div>
+
+          <!-- 8. Foto: Pódium y Campeonato -->
+          <div class="gallery-item" data-type="image" data-category="competicion" 
+               data-src="images/post_3.jpg" 
+               data-thumb="images/post_3.jpg"
+               data-title="Superación y Éxitos en Campeonatos" 
+               data-caption="Pódium y agradecimiento a los compañeros y profesores tras los torneos de BJJ. El esfuerzo diario se refleja en los resultados." 
+               data-ig="https://www.instagram.com/p/DYAxjSsAuIm/">
             <img src="images/post_3.jpg" alt="Compañerismo y competición" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
             <div class="gallery-item-overlay">
-              <span class="gallery-item-text">Superación y agradecimiento en cada campeonato</span>
+              <span class="gallery-item-tag">Competición</span>
+              <span class="gallery-item-text">Superación y medallas en torneos</span>
             </div>
           </div>
-          <div class="gallery-item">
+
+          <!-- 9. Foto: Clases de Grappling No-Gi -->
+          <div class="gallery-item" data-type="image" data-category="clases" 
+               data-src="images/post_10.jpg" 
+               data-thumb="images/post_10.jpg"
+               data-title="Grappling y Lucha No-Gi" 
+               data-caption="Sesiones de sumisión y lucha sin kimono todos los martes a las 19:30h. Máximo dinamismo y control posicional." 
+               data-ig="https://www.instagram.com/p/DVf9EIjiIXB/">
+            <img src="images/post_10.jpg" alt="Clase de Grappling en el tatami" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Grappling</span>
+              <span class="gallery-item-text">Lucha No-Gi los martes a las 19:30h</span>
+            </div>
+          </div>
+
+          <!-- 10. Foto: BJJ Infantil -->
+          <div class="gallery-item" data-type="image" data-category="clases" 
+               data-src="images/post_2.jpg" 
+               data-thumb="images/post_2.jpg"
+               data-title="BJJ Infantil: Diversión y Valores" 
+               data-caption="En nuestras clases infantiles los niños y jóvenes desarrollan disciplina, respeto, confianza, coordinación motriz y trabajo en equipo en un entorno seguro." 
+               data-ig="https://www.instagram.com/p/DZurldKINNu/">
+            <img src="images/post_2.jpg" alt="Clases de BJJ infantil" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Kids</span>
+              <span class="gallery-item-text">Valores y coordinación para niños</span>
+            </div>
+          </div>
+
+          <!-- 11. Foto: Empieza desde Cero -->
+          <div class="gallery-item" data-type="image" data-category="clases" 
+               data-src="images/post_6.jpg" 
+               data-thumb="images/post_6.jpg"
+               data-title="Empieza desde Cero en BJJ" 
+               data-caption="Empieza desde cero, pero empieza. El Jiu-Jitsu es un arte suave donde la técnica supera a la fuerza bruta. ¡Atrévete a dar el primer paso!" 
+               data-ig="https://www.instagram.com/p/DXZoyRDCLTE/">
+            <img src="images/post_6.jpg" alt="Tatami y entrenamiento BJJ" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-tag">Iniciación</span>
+              <span class="gallery-item-text">Aprende técnica a tu propio ritmo</span>
+            </div>
+          </div>
+
+          <!-- 12. Foto: Instalaciones y Tatami -->
+          <div class="gallery-item" data-type="image" data-category="instalaciones" 
+               data-src="images/post_4.jpg" 
+               data-thumb="images/post_4.jpg"
+               data-title="Detalle Artístico de la Academia" 
+               data-caption="Detalle del arte callejero y la personalidad única de nuestras instalaciones en Carrer del Prat, 4, Sant Adrià de Besòs." 
+               data-ig="https://www.instagram.com/p/DXmq0OCDWBc/">
             <img src="images/post_4.jpg" alt="Graffiti Trazo Urbano gym" loading="lazy">
+            <span class="gallery-badge photo-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Foto
+            </span>
             <div class="gallery-item-overlay">
-              <span class="gallery-item-text">Detalle del graffiti artístico en nuestras instalaciones</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/post_9.jpg" alt="Entrenamiento en el tatami" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-text">Técnica pura y compañerismo en cada entreno</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/post_11.jpg" alt="Graduaciones y equipo" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-text">Celebrando el progreso de cada alumno en el tatami</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/post_12.jpg" alt="Podium y logros deportivos" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-text">Compitiendo con orgullo bajo el escudo de Team Cuevas</span>
+              <span class="gallery-item-tag">Instalaciones</span>
+              <span class="gallery-item-text">Arte y tatami en Sant Adrià</span>
             </div>
           </div>
         </div>
@@ -525,6 +724,44 @@
       </div>
     </div>
   </footer>
+
+  <!-- Multimedia Lightbox Modal -->
+  <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog" aria-label="Visor de publicación">
+    <div class="gallery-modal-backdrop" id="modalBackdrop"></div>
+    <div class="gallery-modal-dialog">
+      <button class="gallery-modal-close" id="modalClose" aria-label="Cerrar visor">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="gallery-modal-body">
+        <div class="gallery-modal-media-container" id="modalMediaContainer">
+          <button class="gallery-modal-nav gallery-modal-prev" id="modalPrev" aria-label="Anterior elemento">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="gallery-modal-nav gallery-modal-next" id="modalNext" aria-label="Siguiente elemento">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="gallery-modal-media-viewport" id="modalMediaViewport">
+            <!-- Dynamic media (video or image) injected by JS -->
+          </div>
+        </div>
+        <div class="gallery-modal-sidebar">
+          <div class="modal-sidebar-top">
+            <span class="modal-badge" id="modalBadge">Reel</span>
+            <span class="modal-source">@team_cuevasbjj</span>
+          </div>
+          <h3 class="modal-title" id="modalTitle">Título de la publicación</h3>
+          <p class="modal-caption" id="modalCaption">Descripción detallada...</p>
+          <div class="modal-sidebar-bottom">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary modal-ig-btn" id="modalIgLink">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              Ver en Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- App JavaScript -->
   <script src="app.js"></script>

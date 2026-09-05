@@ -50,7 +50,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
   font-size: 16px;
   background-color: var(--bg);
   color: var(--text-main);
@@ -523,14 +522,8 @@ button, input, select, textarea {
 
 /* Sections Common */
 .section {
-  padding: 5rem 0;
+  padding: 7.25rem 0 5rem 0;
   position: relative;
-  scroll-margin-top: 110px;
-}
-
-section[id],
-:target {
-  scroll-margin-top: 110px;
 }
 
 .section-header {

@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Initial Splash Screen: lasts 500ms (half a second) then fades out
+  const splashScreen = document.getElementById('splashScreen');
+  if (splashScreen) {
+    setTimeout(() => {
+      splashScreen.classList.add('splash-hidden');
+      setTimeout(() => {
+        if (splashScreen.parentNode) {
+          splashScreen.parentNode.removeChild(splashScreen);
+        }
+      }, 500);
+    }, 500);
+  }
+
   // Mobile Navigation Drawer Toggle
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
